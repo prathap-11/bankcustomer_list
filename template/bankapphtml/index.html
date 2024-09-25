@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bankappcss/index.css' %}">
+</head>
+<body>
+    <h1>welcome to our bank</h1>
+    <h2>customer list</h2>
+    <a href="/bankapp1/add"><input type"button" value="add new customer"></a>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>place</th>
+            <th>email</th>
+            <th>dob</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+
+        {% for i in index %}
+        <tr>
+           
+            <td>{{ i.name }}</td>
+            <td> {{ i.age }}</td>
+            <td>{{ i.place }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.dob }}</td>
+            <td><a href="upd/{{ i.id }}"><input type="button" class="button" value="update"></a></td>
+           <td><a href="del/{{i.id }}"><input type="button" class="button" value="delete"></a></td>
+            
+        </tr>
+        {% endfor %}
+        
+
+        
+    </table>
+</body>
+</html>
